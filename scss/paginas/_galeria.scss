@@ -4,8 +4,8 @@
 
 #body-galeria{
     background: rgba(0, 4, 40, 0.514);  
-    background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 40, 0.87)), url(/img/fondos/fondoGaleria.jpg);
-    background: linear-gradient(to right, rgba(0, 78, 146, 0.87), hsla(234, 100%, 8%, 0.87)), url(/img/fondos/fondoGaleria.jpg); 
+    background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 40, 0.87)), url(../img/fondos/fondoGaleria.jpg);
+    background: linear-gradient(to right, rgba(0, 78, 146, 0.87), hsla(234, 100%, 8%, 0.87)), url(../img/fondos/fondoGaleria.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }

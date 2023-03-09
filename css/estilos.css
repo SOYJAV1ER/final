@@ -55,7 +55,7 @@ header {
   grid-row: 1/2; }
 
 #body-tour {
-  background-image: url("/img/fondos/FondoTour.gif");
+  background-image: url("../img/fondos/FondoTour.gif");
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -241,8 +241,8 @@ header {
 
 #body-galeria {
   background: rgba(0, 4, 40, 0.514);
-  background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 40, 0.87)), url(/img/fondos/fondoGaleria.jpg);
-  background: linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 41, 0.87)), url(/img/fondos/fondoGaleria.jpg);
+  background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 40, 0.87)), url(../img/fondos/fondoGaleria.jpg);
+  background: linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 41, 0.87)), url(../img/fondos/fondoGaleria.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
