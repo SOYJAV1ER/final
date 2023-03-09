@@ -1,0 +1,61 @@
+
+// Encabezado---------------------
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.5rem;
+    .logo{
+        cursor: pointer;
+    }
+    nav{
+        ul{
+            position: relative;
+            display: flex;
+            gap: 1rem;
+            li{
+                position: relative;
+                list-style: none;
+                a{
+                    position: relative;
+                    font-family: 'Allerta Stencil', sans-serif;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                    line-height: 1em;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: transparent;
+                    -webkit-text-stroke: 1px rgb(216, 214, 214);
+                    &::before{
+                        content: attr(data-text);
+                        position: absolute;
+                        color: #00ade1;                        width: 0;
+                        overflow: hidden;
+                        transition: 1s;
+                        border-right: 1px solid #00ade1;
+                    }
+                    &:hover::before{
+                        width: 100%;
+                        -webkit-text-stroke:1px #00ade1;
+                    }
+                }
+            }
+        }
+    }
+}
+    .logo{
+        width: 20rem;
+    }
+
+@media (max-width: 768px){
+header{
+    flex-direction: column;
+    gap: 1rem;
+    .logo{
+        margin-top: 1rem;
+    }
+}
+
+    }
+
+

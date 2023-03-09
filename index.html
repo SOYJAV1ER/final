@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="img/favicon.ico.ico" type="image/x-icon">
+    <title>Inicio</title>
+    <!-- link fuente iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- Fuentes tipográficas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+
+
+</head>
+<body id="body-inicio">
+    <!-- Inicio encabezado (logo + menu)-------------------------- -->
+    <header>
+        <a href="index.html"><img src="img/logo-maiden-pie.png" class="logo" alt="logo de la banda de heavy metal Iron Maiden"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a></li>
+                <li><a href="paginas/tour.html" data-text="&nbsp;Tour">&nbsp;Tour&nbsp;</a></li>
+                <li><a href="paginas/tienda.html" data-text="&nbsp;Tienda">&nbsp;Tienda&nbsp;</a></li>
+                <li><a href="paginas/galeria.html" data-text="&nbsp;Galeria">&nbsp;Galeria&nbsp;</a></li>
+                <li><a href="paginas/musica.html" data-text="&nbsp;Musica">&nbsp;Musica&nbsp;</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Fin encabezado------------------------------------------- -->
+    <!-- ********************************************************* -->
+    <!-- Inicio main inicio -------------------------------------- -->
+    <main class="main-inicio">
+        <p class="escribir">El tour "The Future Past" 2023 está por comenzar!<samp class="cursor">|</samp></p>
+        <div class="contenedor-start">
+            <a href="#gira" class="start">Comienza!</a>
+            <div class="video-contenedor">
+                <span class="cerrar">&#10006;</span>
+                <video id="gira" src="img/VideoStart.mp4" controls></video>
+            </div>
+        </div>
+    </main>
+    <section>
+        <div class="contenedor-card" id="card1">
+            <div class="card">
+                <figure>
+                    <img src="img/2-minutes-to-midnight.png" alt="remera de Iron Maiden">
+                </figure>
+                <div class="contenido">
+                    <h3>Legacy of the Beast tour</h3>
+                    <a href="/paginas/tienda.html">La Quiero!</a>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-card">
+            <div class="card">
+                <figure>
+                    <img src="img/the-writing-on-the-wall.png" alt="remera de Iron Maiden">
+                </figure>
+                <div class="contenido">
+                    <h3>The Wrinting on the Wall</h3>
+                    <a href="paginas/tienda.html">La Quiero!</a>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-card">
+            <div class="card">
+                <figure>
+                    <img src="img/iron-maiden-x-marvel-venom.png" alt="remera de Iron Maiden">
+                </figure>
+                <div class="contenido">
+                    <h3>Iron Maiden MARVEL</h3>
+                    <a href="/paginas/tienda.html">La Quiero!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin main inicio------------------------------------------ -->
+    <!-- ********************************************************* -->
+    <!-- Inicio footer-------------------------------------------- -->
+    <footer>
+        <div class="pie-logo">
+            <a href="index.html"><img src="img/logo-maiden-pie.png" class="logo" alt="logo de la banda de heavy metal Iron Maiden"></a>
+        </div>
+        <div class="contenedor-iconos">
+            <ul>
+                <li><a href="https://www.facebook.com/ironmaiden" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/ironmaiden/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://open.spotify.com/artist/6mdiAmATAx73kdxrNrnlao" target="_blank"><i class="fab fa-spotify"></i></a></li>
+                <li><a href="https://www.youtube.com/user/ironmaiden" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        
+        <div class="pie-derechos">
+            <p>Copyright &copy; 2023 :::::: creado y desarrollado por Claudio Javier Suarez :::::: &#174; todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!-- fin del footer-------------------------------------------- -->
+    <script>
+        const boton = document.querySelector('.start');
+        const videoContenedor = document.querySelector('.video-contenedor');
+        const cerrar = document.querySelector('.cerrar');
+        boton.addEventListener('click',()=>{
+            videoContenedor.classList.add('show');
+        })
+        cerrar.addEventListener('click',()=>{
+            videoContenedor.classList.remove('show');
+        })
+    </script>
+</body>
+</html>

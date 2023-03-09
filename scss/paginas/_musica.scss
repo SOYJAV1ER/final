@@ -1,0 +1,150 @@
+
+#body-musica{
+    background: rgba(15, 12, 41, 0.733);  
+    background: -webkit-linear-gradient(to right, rgba(36, 36, 62, 0.514), rgba(48, 43, 99, 0.514), rgba(15, 12, 41, 0.514)), url("../img/fondos/FondoMusica.gif");  
+    background: linear-gradient(to right, rgba(36, 36, 62, 0.418), rgba(48, 43, 99, 0.418), rgba(15, 12, 41, 0.418)), url("../img/fondos/FondoMusica.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// Estilos del main
+.main-musica{
+    display: flex;
+    margin-top: 6rem;
+    justify-content: center;
+    text-align: center;
+    justify-content: space-around;
+    font-family: 'Merriweather Sans', sans-serif;
+    .contenedor-album{
+        display: flex;
+        flex-wrap: nowrap;
+        .album{
+            background-color: rgba(0, 0, 0, 0);
+            width: 22rem;
+            height: 25rem;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0px 1px 10px rgb(129, 124, 189);
+            cursor: default;
+            transition: all 400ms ease;
+            &:hover{
+                box-shadow: 5px 5px 20px rgb(122, 114, 168);
+                transform: translateY(-3%);
+            }
+            img{
+                width: 80%;
+                height: 17rem;
+                padding: 5px;
+                margin-top: 20px;
+                background-color: rgba(245, 245, 245, 0.322);
+            }
+            .contenido{
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                h3{
+                    color: whitesmoke;
+                }
+                a{
+                    text-decoration: none;
+                    margin: 1rem;
+                    padding: 0.3rem;
+                    color: whitesmoke;
+                    font-weight: bold;
+                    border: 1px solid #585858;
+                    border-radius: 4px;
+                    transition: all 400ms ease;
+                    &:hover{
+                        background: #9e9e9d;
+                        color: rgb(12, 12, 12);
+                    }
+                }
+            }
+        }
+    }
+}
+.contenedor-listas{
+    --state-spoty1: scale(0);
+    --state-spoty2: scale(0);
+    --state-spoty3: scale(0);
+    margin-top: 8rem;
+    height: 90vh;
+    .spoty1{
+        position: absolute;
+        width: 50rem;
+        opacity: 0.8;
+        box-shadow: 0px 1px 24px rgb(129, 124, 189);
+        transition: 0.4s;
+        transform: var(--state-spoty1);
+        &:target{
+            --state-spoty1: scale(1);
+            --state-spoty2: scale(0);
+            --state-spoty3: scale(0);
+        }
+    }
+    .spoty2{
+        position: absolute;
+        width: 50rem;
+        opacity: 0.8;
+        box-shadow: 0px 1px 24px rgb(129, 124, 189);
+        transition: 0.4s;
+        transform: var(--state-spoty2);
+        &:target{
+            --state-spoty1: scale(0);
+            --state-spoty2: scale(1);
+            --state-spoty3: scale(0);
+        }
+    }
+    .spoty3{
+        position: absolute;
+        width: 50rem;
+        opacity: 0.8;
+        box-shadow: 0px 1px 24px rgb(129, 124, 189);
+        transition: 0.4s;
+        transform: var(--state-spoty3);
+        &:target{
+            --state-spoty1: scale(0);
+            --state-spoty2: scale(0);
+            --state-spoty3: scale(1);
+        }
+    }
+}
+// @media tablet
+@media (max-width: 768px){
+    .main-musica{
+        .cd3{
+            display: none;
+        }
+    }
+    .contenedor-listas{
+        .spoty1{
+            width: 35rem;
+            
+        }
+        .spoty2{
+            width: 35rem;
+        }
+
+    }
+}
+// @Media movil
+@media (max-width: 576px){
+    #body-musica{
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .main-musica{
+        display: none;
+    }
+    .contenedor-listas{
+        --state-spoty1: scale(1);
+        margin-top: 4rem;
+        height: 100vh;
+        .spoty1{
+            width: 30rem;
+            iframe{
+                height: 41rem;
+            }
+        }
+    }
+}

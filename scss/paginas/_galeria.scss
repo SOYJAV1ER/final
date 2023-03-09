@@ -1,0 +1,224 @@
+
+
+@import "../base/mixins";
+
+#body-galeria{
+    background: rgba(0, 4, 40, 0.514);  
+    background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.87), rgba(0, 4, 40, 0.87)), url(/img/fondos/fondoGaleria.jpg);
+    background: linear-gradient(to right, rgba(0, 78, 146, 0.87), hsla(234, 100%, 8%, 0.87)), url(/img/fondos/fondoGaleria.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-galeria{
+    --state-80: scale(0);
+    --state-90: scale(0);
+    --state-00: scale(0);
+    --state-10: scale(0);
+    --state-20: scale(0);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2rem;
+    height: 100vh;
+    h2{
+        font-family: 'Merriweather Sans', sans-serif;
+        font-size: 2.5rem;
+        padding: 0.5rem;
+        color: whitesmoke;
+        box-shadow: 0 0 14px rgb(245, 244, 244);
+        margin-bottom: 1rem;
+    }
+    .reloj{
+        .arena{
+            width: 15%;
+            margin-top: 4rem;
+            margin-bottom: 5rem;
+            align-content: center;
+            opacity: 0.3;
+            animation: movimiento 8s linear infinite;
+        }
+    }
+    .contenedor-galeria{
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+        padding: 2rem;
+        li{
+            list-style: none;
+            font-size: 1.5rem;
+            justify-content: space-around;
+            .boton-galeria{
+                text-decoration: none;
+                color: whitesmoke;
+                background-color: #0000005e;
+                padding: 15px;
+                border-radius: 5rem;
+                box-shadow: 0 0 14px whitesmoke;
+                animation: decadas 2s linear infinite;
+                @keyframes decadas{
+                    0%{
+                        box-shadow: 0 0 0 0 $dorado, 0 0 0 0 $dorado;
+                    }
+                    33%{
+                        box-shadow: 0 0 0 10px rgba(204, 6, 6, 0), 0 0 0 0 $dorado;
+                    }
+                    // 66%{
+                    //     box-shadow: 0 0 0 10px rgba(204, 6, 6, 0), 0 0 0 15px rgba(204, 6, 6, 0);
+                    // }
+                    100%{
+                        box-shadow: 0 0 0 0 rgba(204, 6, 6, 0), 0 0 0 0 15px rgba(204, 6, 6, 0);
+                    }
+                }
+            }
+        }
+    }
+    .contenedor-carrusel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        margin-top: 12rem;
+        margin-left: 50%;
+        .boton-80{
+            @include galeria-decadas;
+            transition: .4s transform;
+            transform: var(--state-80);
+            &:target{
+                --state-80: scale(1);
+                --state-90: scale(0);
+                --state-00: scale(0);
+                --state-10: scale(0);
+                --state-20: scale(0);
+            }
+            .slide{
+                box-shadow: 0 0 14px black;
+            }
+        }
+        .boton-90{
+            @include galeria-decadas;
+            transition: .4s transform;
+            transform: var(--state-90);
+            &:target{
+                --state-90: scale(1);
+                --state-80: scale(0);
+                --state-00: scale(0);
+                --state-10: scale(0);
+                --state-20: scale(0);
+            }
+            .slide{
+                box-shadow: 0 0 14px black;
+            }
+        }
+        .boton-00{
+            @include galeria-decadas;
+            transition: .4s transform;
+            transform: var(--state-00);
+            &:target{
+                --state-00: scale(1);
+                --state-80: scale(0);
+                --state-90: scale(0);
+                --state-10: scale(0);
+                --state-20: scale(0);
+            }
+            .slide{
+                box-shadow: 0 0 14px black;
+            }
+        }
+        .boton-10{
+            @include galeria-decadas;
+            transition: .4s transform;
+            transform: var(--state-10);
+            &:target{
+                --state-10: scale(1);
+                --state-80: scale(0);
+                --state-90: scale(0);
+                --state-00: scale(0);
+                --state-20: scale(0);
+            }
+            .slide{
+                box-shadow: 0 0 14px black;
+            }
+        }
+        .boton-20{
+            @include galeria-decadas;
+            transition: .4s transform;
+            transform: var(--state-20);
+            &:target{
+                --state-20: scale(1);
+                --state-80: scale(0);
+                --state-90: scale(0);
+                --state-00: scale(0);
+                --state-10: scale(0);
+            }
+            .slide{
+                box-shadow: 0 0 14px black;
+            }
+        }
+    }
+}
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+// @media tablet
+@media (max-width: 768px){
+    #body-galeria{
+        background-size: cover;
+    }
+    .main-galeria{
+        height: 100vh;
+        .contenedor-carrusel{
+            margin-top: 11rem;
+        }
+    }
+    .footer-galeria{
+        .contenedor-iconos{
+            ul{
+                padding-left: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// @media movil
+@media (max-width: 576px){
+    #body-galeria{
+        background-position: center;
+        header{
+            nav{
+                ul{
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .main-galeria{
+        h2{
+            font-size: 2rem;
+        }
+        .contenedor-galeria{
+            gap: 3rem;
+        }
+        .contenedor-carrusel{
+            .boton-80, .boton-90, .boton-00, .boton-10, .boton-20{
+                width: 30rem;
+                padding: 1rem;
+            }
+            
+        }
+    }
+    .footer-galeria{
+        .pie-derechos{
+            font-size: 0.6rem;
+        }
+    }
+}

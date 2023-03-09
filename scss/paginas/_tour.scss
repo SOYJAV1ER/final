@@ -1,0 +1,184 @@
+
+@import "../base/extend";
+
+// Fondo tour----------------------------------
+#body-tour{
+    background-image: url("/img/fondos/FondoTour.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// Estilos del main----------------------------
+.main-tour{
+    margin-bottom: 5rem;
+    img{
+        position: absolute;
+        width: 85%;
+        opacity: 0.6;
+        margin-left: 7%;
+    }
+    .tour{
+        --state-cerrar: scale(0);
+        --state-gps: scale(1);
+        --state-fechas: translate(-100%);
+        --state-ticket: scale(0);
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-top: 2rem;
+        font-family: 'Merriweather Sans', sans-serif;
+
+        &:target{
+            --state-cerrar: scale(1);
+            --state-gps: scale(0);
+            --state-fechas: translate(0);
+        }
+        .contenedor-calendario{
+            background: rgba(5, 49, 74, 0.664);
+            background: linear-gradient(0deg, rgba(5,49,74,1) 0%, rgba(22,88,114,1) 37%, rgba(93,213,224,0.8393732492997199) 100%);
+            opacity: 0.9;
+            display: grid;
+            align-content: center;
+            gap: 2rem;
+            color: whitesmoke;
+            width: 100%;
+            height: 46rem;
+            z-index: 1;
+            transform: var(--state-fechas);
+            transition: .3s transform;
+            .tour__titulo{
+                font-size: 2rem;
+                text-align: center;
+            }
+            .calendario{
+                font-size: 1.1rem;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                .iten{
+                    list-style: none;
+                }
+            }
+
+        }
+        .gps{
+            @extend %img-icon;
+            transition: .4s transform;
+            transform: var(--state-gps);
+            .gps1{
+                animation: gps 2s linear infinite;
+            }    
+        }
+        @keyframes gps{
+            0%{
+                box-shadow: 0 0 0 0 $dorado, 0 0 0 0 $dorado;
+            }
+            33%{
+                box-shadow: 0 0 0 20px rgba(204, 6, 6, 0), 0 0 0 0 rgba(255, 251, 0, 0.6);
+            }
+            66%{
+                box-shadow: 0 0 0 20px rgba(204, 6, 6, 0), 0 0 0 50px rgba(204, 6, 6, 0);
+            }
+            100%{
+                box-shadow: 0 0 0 0 rgba(204, 6, 6, 0), 0 0 0 0 50px rgba(204, 6, 6, 0);
+            }
+        }
+        .cerrar{
+            @extend %img-icon;
+            transition: .4s transform;
+            transform: var(--state-cerrar);
+        }
+        .icon{
+            width: 5rem;
+            border-radius: 50%;
+            margin-top: 1rem;
+            margin-left: 8rem;
+        }
+        .ticket{
+            position: absolute;
+            margin-top: 45%;
+            margin-left: 65%;
+            transform: var(--state-cerrar);
+            transition: .4s;
+            .entrada{
+                color: white;
+                box-shadow: 2px 2px 50px #f7f4f4;
+                font-size: 1.2rem;
+                padding: 1.5rem 2rem;
+            }
+        }
+    }
+    
+}
+// @media tablet
+@media (max-width: 768px){
+    .main-tour{
+        .tour{
+            .contenedor-calendario{
+                height: 26.5rem;
+                align-content: start;
+                gap: 3rem;
+                
+                .tour__titulo{
+                    font-size: 1.3rem;
+                    margin-top: 2rem;
+                }
+                .calendario{
+                    font-size: 0.8rem;
+                    gap: 1.5rem;
+                    padding: 0 0.2rem 0 2rem;
+                    .Julio{
+                        display: none;
+                    }
+                    
+                }
+            }
+            .icon{
+                width: 4rem;
+                margin-left: 6rem;
+            }
+            .ticket{
+                margin-left: 60%;
+                .entrada{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+// @media movil
+@media (max-width: 576px){
+    .main-tour{
+        .tour{
+            .contenedor-calendario{
+                height: 19.7rem;
+                
+                .tour__titulo{
+                    font-size: 1rem;
+                    margin-top: 2rem;
+                }
+                .calendario{
+                    font-size: 0.7rem;
+                    gap: 1.5rem;
+                    padding: 0 0.2rem 0 2rem;
+                    .mayo{
+                        display: none;
+                    }
+                    
+                }
+            }
+            .icon{
+                width: 3rem;
+                margin-left: 5rem;
+            }
+            .ticket{
+                margin-left: 53%;
+                margin-top: 45%;
+                .entrada{
+                    font-size: 0.8rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
